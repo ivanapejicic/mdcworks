@@ -1,13 +1,16 @@
 import './App.scss';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './assets/pages/Login/Login';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          MDC WORKS
-        </p>
-      </header>
+      <BrowserRouter>
+        <Routes>
+        <Route path= '/' element={<Login />} />
+        </Routes>      
+      </BrowserRouter>
     </div>
   );
 }
