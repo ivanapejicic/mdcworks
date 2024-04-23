@@ -1,8 +1,18 @@
 import './Login.scss';
 
 function Login(){
+
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        const username = event.target.username.value;
+        const password = event.target.password.value;
+
+        if (username === 'admin' && password === 'admin') {
+            alert('admin')
+        } else {
+            alert('student');
+        }
     }
 
     return(
