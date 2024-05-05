@@ -1,6 +1,7 @@
 import './Login.scss';
 import { FiUser } from "react-icons/fi";
 import { GoLock } from "react-icons/go";
+import Header from '../../components/Header/Header';
 
 function Login(){
 
@@ -18,6 +19,8 @@ function Login(){
     }
 
     return(
+        <>
+        <Header/>
         <div className='login'>
             <form className='form' onSubmit={handleSubmit}>
                 <h2 className='form__title'>MDC Works Login</h2>
@@ -35,6 +38,7 @@ function Login(){
 
             </form>
         </div>
+        </>
     )
 }
 
