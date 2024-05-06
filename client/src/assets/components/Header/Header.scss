@@ -7,17 +7,18 @@
     align-items: center;
     padding: .5rem 1rem;
     overflow: hidden;
-    // gap: 2rem;
-    @include tablet{
-        justify-content: space-between; 
-    }
+
     @include desktop{
         padding: .5rem 5rem;
     }
     &__logo {
         width: 40%; 
-        max-width: 20rem; 
+        max-width: 12rem; 
+        
+        @include tablet {
+            max-width: 15rem; 
 
+        }
         @include desktop{
             margin-right: 12rem;
         }
@@ -26,15 +27,17 @@
     &__nav {
         width: 40%;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
+        justify-content:left;
         list-style: none; 
+        margin: auto;
 
         &-link {
             margin-right: .2rem; 
             text-decoration: none;
             color: $mdcblue;
             font-family: 'Inter'; 
-            font-size: 0.6rem; 
+            font-size: 0.8rem; 
 
             @include tablet{
                 font-size: 1.2rem;
