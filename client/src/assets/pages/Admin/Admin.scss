@@ -108,6 +108,7 @@
         width:50%;
         border: solid 1px $border;
         border-radius: .75rem;
+        text-wrap: nowrap;
 
         &-text{
             margin-left: .75rem;
