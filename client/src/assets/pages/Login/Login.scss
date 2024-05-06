@@ -10,17 +10,45 @@
     height: 80vh;
     //margin-top: .5rem;
 
+    @include desktop {
+        flex-direction: row;
+        height: 90vh;
+    }
+
     &__hero {
         background-image: url('./../../images/main-bg.jpg');
-        object-fit: cover;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         height: 45%;
         padding: 1rem;
-        display: grid;
-        place-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include tablet {
+            padding: 2rem;
+            height: 50%;
+        }
+
+        @include desktop {
+            height: 100%;
+            width: 70%;
+        }
 
         p {
             color: white;
             text-align: center;
+            //font needs to be lighter
+
+            @include tablet {
+                width: 80%;
+            }
+
+            @include desktop {
+                font-size: 1.25rem;
+            }
         }
     }
 
@@ -29,7 +57,8 @@
         font-size: 1.875rem;
         color: white;
         text-align: center;
-        margin-bottom: 1rem;
+        margin-bottom: 3rem;
+        //font needs to be bolder
 
         &::after {
             content: '';
@@ -39,6 +68,16 @@
             width: 10%;
             height: .3125rem;
             background-color: $light-green;
+        }
+
+        @include tablet {
+            font-size: 2.125rem;
+            margin-bottom: 4rem;
+        }
+
+        @include desktop {
+            font-size: 2.5rem;
+            margin-bottom: 5rem;
         }
     }
 }
@@ -58,8 +97,10 @@
     width: 40vh;
 
     @include desktop {
-        width: 60vh;
+        // height: 50%;
+        width: 30%;
     }
+
 
     &__title {
         padding: .5rem;
@@ -69,6 +110,10 @@
     .form {
         width: 100%;
         padding: 1.2rem;
+
+        @include desktop {
+            width: 90%;
+        }
 
         &__title {
             margin-bottom: .5rem;
