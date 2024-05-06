@@ -5,10 +5,15 @@
 .login {
     position: relative;
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 70vh;
+    
+    @include desktop {
+        height: 50vh;
+        margin-top: 10rem;
+    }
 
     &__title {
         padding: 1rem;
@@ -20,8 +25,15 @@
     }
 
     .form {
-        width: 30rem;
+        width: 100%;
         padding: 1rem;
+
+        @include tablet{
+            width: 70%;
+        }
+        @include desktop{
+            width: 50%;
+        }
 
         &__title {
             margin-bottom: .5rem;

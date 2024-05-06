@@ -9,7 +9,7 @@ function Header(){
             <nav className='header__nav'>
                 <Link className='header__nav-link' to='https://mdc.edu/'>CAREERS</Link>
                 <Link className='header__nav-link' to='https://mdc.edu/'>RESOURCES</Link>
-                <Link className='header__nav-link' to='https://mdc.edu/'>EVENTS</Link>
+                {/* <Link className='header__nav-link' to='https://mdc.edu/'>EVENTS</Link> */}
                 <Link className='header__nav-link' to='https://mdc.edu/'>EMPLOYERS</Link>
                 <Link className='header__nav-link' to='https://mdc.edu/'>CONTACT</Link>
 
