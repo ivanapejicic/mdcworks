@@ -2,24 +2,59 @@
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/variables' as *;
 
-.main{
-    display:flex;
+.main {
+    display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
+    height: 80vh;
     //margin-top: .5rem;
-    
+
+    &__hero {
+        background-image: url('./../../images/main-bg.jpg');
+        object-fit: cover;
+        height: 45%;
+        padding: 1rem;
+        display: grid;
+        place-items: center;
+
+        p {
+            color: white;
+            text-align: center;
+        }
+    }
+
+    &__heading {
+        position: relative;
+        font-size: 1.875rem;
+        color: white;
+        text-align: center;
+        margin-bottom: 1rem;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -1.25rem;
+            left: 45%;
+            width: 10%;
+            height: .3125rem;
+            background-color: $light-green;
+        }
+    }
 }
-.image{
-    width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-}
+
+// .image {
+//     width: 100%;
+//     height: auto;
+//     margin-bottom: 1rem;
+// }
+
 .login {
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 45vh;
+    align-items: center;
+    // height: 45vh;
+    height: 55%;
     width: 40vh;
 
     @include desktop {
@@ -40,6 +75,7 @@
             color: $mdcblue;
             padding: 1rem 0;
             font-family: 'Inter';
+            text-align: center;
         }
 
         &__container {

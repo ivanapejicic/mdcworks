@@ -23,7 +23,11 @@ function Login() {
         <>
             <Header />
             <main className='main'>
-                <img className='image' src={blue} />
+                {/* <img className='image' src={blue} /> */}
+                <div className='main__hero'>
+                    <h1 className='main__heading'>MDC WORKS Career Studio</h1>
+                    <p>MDC WORKS Career Studio is a professional development resource giving MDC students the skills they need to successfully launch their careers and create meaningful futures</p>
+                </div>
                 <div className='login'>
                     <form className='form' onSubmit={handleSubmit}>
                         <h2 className='form__title'>MDC Works Login</h2>
