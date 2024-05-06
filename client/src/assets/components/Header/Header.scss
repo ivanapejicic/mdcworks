@@ -2,56 +2,188 @@
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/variables' as *;
 
+// .header {
+//     display: flex;
+//     align-items: center;
+//     padding: .5rem 1rem;
+//     overflow: hidden;
+//     border-bottom: 1px $text solid;
+
+//     @include desktop{
+//         padding: .5rem 5rem;
+//     }
+//     &__logo {
+//         width: 40%; 
+//         max-width: 12rem; 
+
+//         @include tablet {
+//             max-width: 15rem; 
+
+//         }
+//         @include desktop{
+//             margin-right: 12rem;
+//         }
+//     }
+
+//     &__nav {
+//         width: 40%;
+//         display: flex;
+//         align-items: flex-end;
+//         justify-content:left;
+//         list-style: none; 
+//         margin: auto;
+
+//         &-link {
+//             margin-right: .5rem; 
+//             text-decoration: none;
+//             color: $mdcblue;
+//             font-family: 'Inter'; 
+//             font-size: 0.8rem; 
+
+//             @include tablet{
+//                 font-size: 1.2rem;
+//                 margin-right: .6rem;
+
+//             }
+//             @include desktop{
+//                 font-size: 1.4rem;
+//                 margin-right: 1rem;
+//             }
+
+//             &:hover {
+//                 transform: scale(1.05)            }
+//         }
+//     }
+// }
+
 .header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: .5rem 1rem;
-    overflow: hidden;
-    border-bottom: 1px $text solid;
+    padding: 1rem;
+    position: relative;
 
-    @include desktop{
-        padding: .5rem 5rem;
+    @include tablet {
+        padding: 2rem;
     }
-    &__logo {
-        width: 40%; 
-        max-width: 12rem; 
-        
-        @include tablet {
-            max-width: 15rem; 
 
+    @include desktop {
+        padding: 1.5rem 4rem;
+        justify-content: space-between;
+    }
+
+    @include large-desktop {
+        padding: 2rem 8rem;
+    }
+
+    &__logo-container {
+        height: 5vh;
+        max-height: 3.75rem;
+
+        @include desktop {
+            height: 6vh;
         }
-        @include desktop{
-            margin-right: 12rem;
+    }
+
+    &__logo {
+        height: 100%;
+    }
+
+    &__menu-toggle {
+        height: 5vh;
+        width: 5vh;
+        max-height: 3.75rem;
+        max-width: 3.75rem;
+        background-color: $mdcblue;
+        display: grid;
+        place-items: center;
+        box-shadow: $shadow;
+
+        svg {
+            color: white;
+            height: 70%;
+            width: 70%;
+        }
+
+        @include desktop {
+            display: none;
         }
     }
 
     &__nav {
-        width: 40%;
-        display: flex;
-        align-items: flex-end;
-        justify-content:left;
-        list-style: none; 
-        margin: auto;
 
-        &-link {
-            margin-right: .5rem; 
-            text-decoration: none;
-            color: $mdcblue;
-            font-family: 'Inter'; 
-            font-size: 0.8rem; 
+        &.open {
+            position: absolute;
+            top: calc(100% - 0.5rem);
+            right: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 2.5rem;
+            background: white;
+            box-shadow: $shadow;
+            border-radius: .25rem;
 
-            @include tablet{
-                font-size: 1.2rem;
-                margin-right: .6rem;
-
+            @include tablet {
+                top: calc(100% - 1rem);
+                right: 2rem;
+                padding: 1.5rem 3rem;
             }
-            @include desktop{
-                font-size: 1.4rem;
-                margin-right: 1rem;
+        }
+
+        &.closed {
+            display: none;
+        }
+
+        &.open, &.closed {
+
+            @include desktop {
+                width: 50%;
+                position: relative;
+                top: 0;
+                right: 0;
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: row;
+                box-shadow: none;
+                border-radius: none;
+                padding: 0;
             }
+            
+        }
+    }
+
+    &__nav-link {
+        text-decoration: none;
+        color: $mdcblue;
+        font-family: 'Inter';
+        font-size: .875rem;
+        line-height: 1.8rem;
+
+        @include tablet {
+            font-size: 1rem;
+        }
+
+        @include desktop {
+            font-size: 1.125rem;
+            line-height: normal;
+            width: 20%;
+            padding: 1rem 0;
+            margin-right: 0.5rem;
+            text-align: center;
 
             &:hover {
-                transform: scale(1.05)            }
+                background-color: $mdcblue;
+                color: white;
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+
+        @include large-desktop {
+            font-size: 1.25rem;
         }
     }
 }

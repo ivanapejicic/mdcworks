@@ -2,6 +2,7 @@
 
 $tablet-breakpoint: 767px;
 $desktop-breakpoint: 1279px;
+$large-desktop-breakpoint: 2100px;
 
 //colors
 
@@ -10,3 +11,5 @@ $text:rgb(161, 161, 161);
 $jobs: rgb(194,221,248);
 $students:rgb(235,200,197);
 $border: #9E9E9E;
+
+$shadow: rgba(99, 99, 99, 0.7) 0rem .125rem .625rem 0rem;
