@@ -1,3 +1,120 @@
 @use '../../styles/partials/typography' as *;
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/variables' as *;
+
+.admin-main{
+    font-family: 'Inter';
+}
+.admin {
+    margin: 2rem;
+
+    @include desktop{
+        margin: 4rem 8rem;
+    }
+
+    &__text{
+        color: $text;
+        font-size: .8125rem;
+
+        @include desktop{
+            font-size: 1rem;
+        }
+    }
+    &__welcome{
+        color: $mdcblue;
+        font-size: .8rem;
+        padding: .5rem 0;
+
+        @include desktop{
+            font-size: 1.3rem;
+        }
+    }
+}
+
+.stats{
+    width: 80%;
+    padding-left: 2rem;
+    display: flex;
+
+    @include tablet{
+        width: 60%;
+    }
+    @include desktop{
+        margin: 2rem 6rem;
+    }
+
+    &__jobs{
+        background-color: $jobs;
+        padding: 2rem;
+        width: 50%;
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+        margin-right: .75rem;
+        border-radius: .75rem;
+
+        &-right{
+            background-color: white;
+            padding: .3rem;
+        }
+
+        &-left{
+            &__text{
+                color: $text;
+            }
+        }
+    }
+    &__students{
+        background-color: $students;
+        padding: 2rem;
+        width: 50%;
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+        border-radius: .75rem;
+
+
+        &-right{
+            background-color: white;
+            padding: .3rem;
+        }
+        &-left{
+            &__text{
+                color: $text;
+                margin-top: .3rem;
+            }
+        }
+        
+    }
+}
+
+.options{
+    width: 80%;
+    padding-left: 2rem;
+    margin-top: 2rem;
+    display: flex;
+
+    @include tablet{
+        width: 60%;
+    }
+    @include desktop{
+        margin: 2rem 6rem;
+    }
+
+    &__add, &__edit{
+        color: $mdcblue;
+        display: flex;
+        padding: 3rem;
+        width:50%;
+        border: solid 1px $border;
+        border-radius: .75rem;
+        text-wrap: nowrap;
+
+        &-text{
+            margin-left: .75rem;
+        }
+    }
+    &__add{
+        margin-right: .75rem;
+    }
+}
