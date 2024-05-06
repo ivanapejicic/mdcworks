@@ -2,6 +2,7 @@ import './Login.scss';
 import { FiUser } from "react-icons/fi";
 import { GoLock } from "react-icons/go";
 import Header from '../../components/Header/Header';
+import blue from '../../images/blueimg.jpg'
 
 function Login(){
 
@@ -21,6 +22,9 @@ function Login(){
     return(
         <>
         <Header/>
+        <div className='main'>
+        <img className='image' src={blue}/>
+
         <div className='login'>
             <form className='form' onSubmit={handleSubmit}>
                 <h2 className='form__title'>MDC Works Login</h2>
@@ -37,6 +41,7 @@ function Login(){
                 <button className='form__button' type="submit">LOGIN</button>
 
             </form>
+        </div>
         </div>
         </>
     )
