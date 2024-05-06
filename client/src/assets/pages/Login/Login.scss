@@ -2,45 +2,44 @@
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/variables' as *;
 
+.main{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: .5rem;
+    
+}
+.image{
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
 .login {
-    position: relative;
     display: flex;
-    // flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 70vh;
-    
+    height: 45vh;
+    width: 40vh;
+
     @include desktop {
-        height: 50vh;
-        margin-top: 10rem;
+        width: 60vh;
     }
 
     &__title {
-        padding: 1rem;
+        padding: .5rem;
         text-align: center;
-
-        @include tablet {
-            padding: .5rem 3.5rem;
-        }
     }
 
     .form {
         width: 100%;
-        padding: 1rem;
-
-        @include tablet{
-            width: 70%;
-        }
-        @include desktop{
-            width: 50%;
-        }
+        padding: 1.2rem;
 
         &__title {
             margin-bottom: .5rem;
             color: $mdcblue;
             padding: 1rem 0;
             font-family: 'Inter';
-
         }
 
         &__container {
