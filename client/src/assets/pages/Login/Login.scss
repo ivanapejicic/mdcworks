@@ -38,9 +38,9 @@
         }
 
         p {
+            font-family: 'Inter Light';
             color: white;
             text-align: center;
-            //font needs to be lighter
 
             @include tablet {
                 width: 80%;

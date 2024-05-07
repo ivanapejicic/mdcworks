@@ -1,0 +1,112 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/variables' as *;
+
+.newjob {
+    font-family: 'Inter';
+
+    &__button {
+        background-color: $mdcblue;
+        color: white;
+        border: none;
+        border-radius: .25rem;
+        margin: .4rem 1rem 2rem;
+        padding: 1rem;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-family: 'Inter';
+        width: 50%;
+    }
+}
+
+.company {
+    margin: 2rem 1rem;
+    border-bottom: 1px solid $light-gray;
+
+
+    &__title {
+        color: $mdcblue;
+        padding-bottom: 1rem;
+    }
+
+    &__subtitle {
+        padding-bottom: .5rem;
+    }
+
+    &__text {
+        color: $text;
+        font-size: .8rem;
+    }
+
+    &__input {
+        display: flex;
+        flex-direction: column;
+        margin: 1.5rem 0;
+        width: 70%;
+
+        &-label {
+            font-family: 'Inter Light';
+            font-size: .8rem;
+            margin: .75rem 0 .5rem;
+
+        }
+
+        &-field {
+            border: .5px $text solid;
+            border-radius: .25rem;
+            padding: .5rem;
+
+            &::placeholder {
+                color: $light-gray;
+            }
+
+        }
+    }
+}
+
+.job {
+    margin: 2rem 1rem;
+    width: 70%;
+
+    &__subtitle {
+        padding-bottom: .5rem;
+    }
+
+    &__text {
+        font-size: .8rem;
+        color: $text;
+    }
+
+    &__input {
+        &-container {
+            margin: 1.5rem 0;
+            display: flex;
+            flex-direction: column;
+
+            &__label {
+                font-family: 'Inter Light';
+                font-size: .8rem;
+                margin: .75rem 0 .5rem;
+            }
+
+            &__field {
+                border: .5px $text solid;
+                border-radius: .25rem;
+                padding: .5rem;
+                width: 100%;
+
+
+
+                &::placeholder {
+                    color: $light-gray;
+                }
+            }
+
+            .job__select-field {
+                width: 100%;
+                padding: .5rem;
+                border: .5px solid $text;
+                border-radius: .25rem;
+            }
+        }
+    }
+}
