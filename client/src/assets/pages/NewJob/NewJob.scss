@@ -94,18 +94,9 @@
                 padding: .5rem;
                 width: 100%;
 
-
-
                 &::placeholder {
                     color: $light-gray;
                 }
-            }
-
-            .job__select-field {
-                width: 100%;
-                padding: .5rem;
-                border: .5px solid $text;
-                border-radius: .25rem;
             }
         }
     }
