@@ -2,29 +2,105 @@
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/variables' as *;
 
-.main{
-    display:flex;
+.main {
+    display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    margin-top: .5rem;
-    
+    height: 80vh;
+    //margin-top: .5rem;
+
+    @include desktop {
+        flex-direction: row;
+        height: 90vh;
+    }
+
+    &__hero {
+        background-image: url('./../../images/main-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 45%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include tablet {
+            padding: 2rem;
+            height: 50%;
+        }
+
+        @include desktop {
+            height: 100%;
+            width: 70%;
+        }
+
+        p {
+            color: white;
+            text-align: center;
+            //font needs to be lighter
+
+            @include tablet {
+                width: 80%;
+            }
+
+            @include desktop {
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    &__heading {
+        position: relative;
+        font-size: 1.875rem;
+        color: white;
+        text-align: center;
+        margin-bottom: 3rem;
+        //font needs to be bolder
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -1.25rem;
+            left: 45%;
+            width: 10%;
+            height: .3125rem;
+            background-color: $light-green;
+        }
+
+        @include tablet {
+            font-size: 2.125rem;
+            margin-bottom: 4rem;
+        }
+
+        @include desktop {
+            font-size: 2.5rem;
+            margin-bottom: 5rem;
+        }
+    }
 }
-.image{
-    width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-}
+
+// .image {
+//     width: 100%;
+//     height: auto;
+//     margin-bottom: 1rem;
+// }
+
 .login {
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 45vh;
+    align-items: center;
+    // height: 45vh;
+    height: 55%;
     width: 40vh;
 
     @include desktop {
-        width: 60vh;
+        // height: 50%;
+        width: 30%;
     }
+
 
     &__title {
         padding: .5rem;
@@ -35,11 +111,16 @@
         width: 100%;
         padding: 1.2rem;
 
+        @include desktop {
+            width: 90%;
+        }
+
         &__title {
             margin-bottom: .5rem;
             color: $mdcblue;
             padding: 1rem 0;
             font-family: 'Inter';
+            text-align: center;
         }
 
         &__container {

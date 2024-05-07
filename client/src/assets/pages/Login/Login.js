@@ -4,7 +4,7 @@ import { GoLock } from "react-icons/go";
 import Header from '../../components/Header/Header';
 import blue from '../../images/blueimg.jpg'
 
-function Login(){
+function Login() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -19,30 +19,33 @@ function Login(){
         }
     }
 
-    return(
+    return (
         <>
-        <Header/>
-        <div className='main'>
-        <img className='image' src={blue}/>
-
-        <div className='login'>
-            <form className='form' onSubmit={handleSubmit}>
-                <h2 className='form__title'>MDC Works Login</h2>
-                <div className='form__container'>
-                    <FiUser className='form__container-icon' />
-                    <input className='form__container-input' type="text" id="username" name="username" placeholder="Username" required />
-                </div>                
-                <br />
-                <div className='form__container'>
-                    <GoLock className='form__container-icon' />
-                    <input className='form__container-input' type="password" id="password" name="password" placeholder="Password" required />
+            <Header />
+            <main className='main'>
+                {/* <img className='image' src={blue} /> */}
+                <div className='main__hero'>
+                    <h1 className='main__heading'>MDC WORKS Career Studio</h1>
+                    <p>MDC WORKS Career Studio is a professional development resource giving MDC students the skills they need to successfully launch their careers and create meaningful futures</p>
                 </div>
-                <br />
-                <button className='form__button' type="submit">LOGIN</button>
+                <div className='login'>
+                    <form className='form' onSubmit={handleSubmit}>
+                        <h2 className='form__title'>MDC Works Login</h2>
+                        <div className='form__container'>
+                            <FiUser className='form__container-icon' />
+                            <input className='form__container-input' type="text" id="username" name="username" placeholder="Username" required />
+                        </div>
+                        <br />
+                        <div className='form__container'>
+                            <GoLock className='form__container-icon' />
+                            <input className='form__container-input' type="password" id="password" name="password" placeholder="Password" required />
+                        </div>
+                        <br />
+                        <button className='form__button' type="submit">LOGIN</button>
 
-            </form>
-        </div>
-        </div>
+                    </form>
+                </div>
+            </main>
         </>
     )
 }
