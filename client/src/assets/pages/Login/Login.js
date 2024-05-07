@@ -23,9 +23,9 @@ function Login(){
         <>
         <Header/>
         <div className='main'>
-        <img className='image' src={blue}/>
+            <img className='image' src={blue}/>
 
-        <div className='login'>
+            <div className='login'>
             <form className='form' onSubmit={handleSubmit}>
                 <h2 className='form__title'>MDC Works Login</h2>
                 <div className='form__container'>
