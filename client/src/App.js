@@ -8,6 +8,7 @@ import CyberSecurity from './assets/pages/CyberSecurity/CyberSecurity';
 import DataAnalyst from './assets/pages/DataAnalyst/DataAnalyst';
 import InformationSystems from './assets/pages/InformationSystems/InformationSystems';
 import SoftwareEngineer from './assets/pages/SoftwareEngineer/SoftwareEngineer';
+import NewJob from './assets/pages/NewJob/NewJob';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path= '/' element={<Login />} />
           <Route path= '/home' element={<Home />} />
           <Route path='/admin' element={<Admin />} />
+          <Route path='/addjob' element={<NewJob />} />
           <Route path= '/ai' element={<AI />} />
           <Route path= '/cybersecurity' element={<CyberSecurity />} />
           <Route path='/dataanalyst' element={<DataAnalyst />} />
