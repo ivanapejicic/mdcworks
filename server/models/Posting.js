@@ -9,6 +9,10 @@ const PostingSchema = new mongoose.Schema({
         type: String,
         required: false
     },
+    jobCategory: {
+        type: String,
+        required: [true, 'Please enter a job category.']
+    },
     jobDescription: {
         type: String,
         required: [true, 'Please enter a job description.']
