@@ -25,7 +25,7 @@ app.get('/api/postings', async (req, res) => {
 })
 
 //get a specific job posting 
-app.get('/api/postings/:id', async (req, res) => {
+app.get('/api/posting/:id', async (req, res) => {
     try {
         const { id } = req.params;
         const posting = await Posting.findById(id);
@@ -42,6 +42,39 @@ app.post('/api/postings', async (req, res) => {
         res.status(200).json(posting)
     } catch (error) {
         res.status.json({message: error.message})
+    }
+})
+
+//update a job posting
+app.put('/api/posting/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const posting = await Posting.findByIdAndUpdate(id, req.body)
+
+        if (!posting) {
+            return res.status(404).json({message: 'Posting not found'});
+        }
+
+        const updatedPosting = await Posting.findById(id);
+        res.status(200).json(updatedPosting);
+    } catch (error) {
+        res.status(500).json({message: error.message});
+    }
+})
+
+//delete a job posting
+app.delete('/api/posting/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const posting = await Posting.findByIdAndDelete(id)
+
+        if (!posting) {
+            return res.status(404).json({message: 'Posting not found'});
+        }
+
+        res.status(200).json({message: 'Job posting deleted successfully'});
+    } catch (error) {
+        res.status(500).json({message: error.message});
     }
 })
 
