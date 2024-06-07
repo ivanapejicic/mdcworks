@@ -11,9 +11,31 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('Hello from home/updated')
+    res.send('Hello from home')
 })
 
+//get all job postings
+app.get('/api/postings', async (req, res) => {
+    try {
+        const postings = await Posting.find({});
+        res.status(200).json(postings)
+    } catch (error) {
+        res.status(500).json({message: error.message})
+    }
+})
+
+//get a specific job posting 
+app.get('/api/postings/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const posting = await Posting.findById(id);
+        res.status(200).json(posting)
+    } catch (error) {
+        res.status(500).json({message: error.message})
+    }
+})
+
+//create a new job posting
 app.post('/api/postings', async (req, res) => {
     try {
         const posting = await Posting.create(req.body);
