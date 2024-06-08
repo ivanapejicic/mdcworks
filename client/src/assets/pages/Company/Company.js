@@ -1,10 +1,10 @@
 import Header from '../../components/Header/Header';
-import './Home.scss';
+import './Company.scss';
 
-export default function Home() {
+export default function Company() {
     return (
         <>
             <Header />
         </>
     )
-}
+} 

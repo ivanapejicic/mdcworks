@@ -1,7 +1,7 @@
 import Header from '../../components/Header/Header';
-import './Home.scss';
+import './About.scss';
 
-export default function Home() {
+export default function About() {
     return (
         <>
             <Header />

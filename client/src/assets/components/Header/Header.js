@@ -1,20 +1,37 @@
 import './Header.scss';
-import logo from '../../images/logo.jpg'
-import { Link } from "react-router-dom";
+import logo from './../../images/shark-tank.webp';
+import { navOptions } from '../../data/data';
+import { NavLink } from 'react-router-dom';
 
-function Header(){
-    return(
-        <div className='header'>
-            <img className='header__logo' src={logo} alt='logo for MDC Works'/> 
+function Header() {
+
+    return (
+        <header className='header'>
+            <a className='header__image-container' href='/'>
+                <img className='header__image' src={logo} alt='placeholder' />
+            </a>
             <nav className='header__nav'>
-                <Link className='header__nav-link' to='https://mdc.edu/'>CAREERS</Link>
-                <Link className='header__nav-link' to='https://mdc.edu/'>RESOURCES</Link>
-                {/* <Link className='header__nav-link' to='https://mdc.edu/'>EVENTS</Link> */}
-                <Link className='header__nav-link' to='https://mdc.edu/'>EMPLOYERS</Link>
-                <Link className='header__nav-link' to='https://mdc.edu/'>CONTACT</Link>
-
+                <ul>
+                    {
+                        navOptions.map((item) => (
+                            <li className='header__nav-item'>
+                                <NavLink to={`/${item.path}`}>
+                                    {item.name}
+                                </NavLink>
+                            </li>
+                        ))
+                    }
+                </ul>
             </nav>
-        </div>
+            <div className='header__buttons-container'>
+                <button className='header__login'>
+                    <a href='/login'>Log In</a>
+                </button>
+                <button className='header__signup'>
+                    <a href='https://www.mdc.edu/registration/'>Sign Up</a>
+                </button>
+            </div>
+        </header>
     )
 }
 

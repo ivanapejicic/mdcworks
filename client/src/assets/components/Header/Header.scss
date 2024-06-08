@@ -3,55 +3,56 @@
 @use '../../styles/partials/variables' as *;
 
 .header {
+    height: 10vh;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: .5rem 1rem;
-    overflow: hidden;
-    border-bottom: 1px $text solid;
+    padding: 0 3vh;
+    font-size: .9375rem;
 
-    @include desktop{
-        padding: .5rem 5rem;
+    &__image-container {
+        height: 10vh;
+        width: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    &__logo {
-        width: 40%; 
-        max-width: 12rem; 
-        
-        @include tablet {
-            max-width: 15rem; 
 
-        }
-        @include desktop{
-            margin-right: 12rem;
-        }
+    &__image {
+        height: 70%;
     }
 
     &__nav {
-        width: 40%;
-        display: flex;
-        align-items: flex-end;
-        justify-content:left;
-        list-style: none; 
-        margin: auto;
-
-        &-link {
-            margin-right: .5rem; 
-            text-decoration: none;
-            color: $mdcblue;
-            font-family: 'Inter'; 
-            font-size: 0.8rem; 
-
-            @include tablet{
-                font-size: 1.2rem;
-                margin-right: .6rem;
-
-            }
-            @include desktop{
-                font-size: 1.4rem;
-                margin-right: 1rem;
-            }
-
-            &:hover {
-                transform: scale(1.05)            }
+        .active {
+            color: $link-button-color;
+            font-weight: 600;
         }
+    }
+
+    &__nav-item {
+        margin-right: .9375rem;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+    }
+
+    &__buttons-container {
+        button {
+            font-weight: 500;
+            color: $primary-text-color;
+            padding: .3125rem 1.25rem;
+            border-radius: .25rem;
+        }
+    }
+
+    &__login {
+        background-color: $primary-background-color;
+        
+    }
+
+    &__signup {
+        background-color: $link-button-color;
     }
 }
