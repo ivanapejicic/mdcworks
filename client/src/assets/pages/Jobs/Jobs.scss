@@ -1,0 +1,31 @@
+@use './../../styles/partials/mixin' as *;
+@use './../../styles/partials/typography' as *;
+@use './../../styles/partials/variables' as *;
+
+.job {
+    padding: 0 1.25rem;
+    display: grid;
+    grid-template-areas:
+        "categories results results"
+        "filters results results";
+
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 25% 1fr;
+    gap: 1rem;
+
+    &__categories {
+        grid-area: categories;
+        border: .0625rem solid red;
+        color: red;
+    }
+
+    &__filters {
+        grid-area: filters;
+        border: .0625rem solid yellow;
+    }
+
+    &__results {
+        grid-area: results;
+        border: .0625rem solid green;
+    }
+}
