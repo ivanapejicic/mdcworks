@@ -1,4 +1,5 @@
 import Header from '../../components/Header/Header'
+import Hero from '../../components/Hero/Hero'
 import './Jobs.scss'
 
 export default function Jobs() {
@@ -6,7 +7,7 @@ export default function Jobs() {
         <>
         <Header />
         <main>
-
+            <Hero />
         </main>
         </>
     )
