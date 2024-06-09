@@ -31,9 +31,12 @@ $accent-red: rgb(234, 67, 53);                          /* Red for accents */
 $accent-green: rgb(52, 168, 83);                        /* Green for accents */
 $accent-light-blue: rgb(66, 133, 244);                  /* Blue for accents */
 
-$input-color: rgb(0, 115, 255);                         /* Blue for input fields */
 $slider-rail-color: rgb(85, 85, 85);
 $checkbox-border-color: rgb(213, 213, 213);  
 
+//box-shadow
 $hover-shadow: 0 0 1.25rem rgba(211, 211, 211, 0.45);
 $active-shadow: 0 0 1.25rem rgba(0, 115, 255, 0.8);
+
+//spinners
+$spinner-background: rgba(90, 89, 89, 0.407);

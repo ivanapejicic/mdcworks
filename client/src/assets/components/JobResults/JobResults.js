@@ -1,9 +1,13 @@
 import './JobResults.scss';
+import CircleSpinner from '../../CircleSpinner/CircleSpinner';
 
-export default function JobResults() {
+export default function JobResults({ jobPostings, loading }) {
+
     return (
-        <section className='job__results'>
-            Results
+        <section className='job__results results'>
+            {
+                loading && <CircleSpinner loading={loading}/>
+            }
         </section>
     )
 }
