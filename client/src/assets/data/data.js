@@ -17,3 +17,16 @@ export const jobCategories = [
     {id: 7, category: "Tech Sales & Marketing"},
     {id: 8, category: "QA & Testing"}
 ]
+
+export const jobType = [
+    {id: 0, type: "Full-time"},
+    {id: 1, type: "Freelance"},
+    {id: 2, type: "Internship"},
+    {id: 3, type: "Volunteer"},
+]
+
+export const jobLocation = [
+    {id: 0, type: "On-site"},
+    {id: 1, type: "Remote"},
+    {id: 2, type: "Hybrid"},
+]

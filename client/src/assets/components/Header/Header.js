@@ -14,7 +14,7 @@ function Header() {
                 <ul>
                     {
                         navOptions.map((item) => (
-                            <li className='header__nav-item'>
+                            <li className='header__nav-item' key={item.id}>
                                 <NavLink to={`/${item.path}`}>
                                     {item.name}
                                 </NavLink>

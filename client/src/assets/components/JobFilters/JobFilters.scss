@@ -1,3 +1,82 @@
 @use '../../styles/partials/typography' as *;
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/variables' as *;
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    padding: 0 .9375rem;
+    background-color: $sidebar-background-color;
+    border-radius: .3125rem;
+
+    &__heading-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 0;
+        border-bottom: .0625rem solid $border-color;
+
+        h2 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        span {
+            font-size: .8125rem;
+            color: $link-button-color;
+            cursor: pointer;
+        }
+    }
+
+    &__filter-container {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0;
+        border-bottom: .0625rem solid $border-color;
+
+        h3 {
+            font-size: .875rem;
+            font-weight: 600;
+            margin-bottom: .625rem;
+        }
+
+        div {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        label {
+            font-size: .8125rem;
+        }
+    }
+
+    &__type-filter {
+        margin-right: .625rem;
+        appearance: none;
+        height: .8125rem;
+        width: .8125rem;
+        border: .0625rem solid $border-color;
+        border-radius: .125rem;
+        position: relative;
+        cursor: pointer;
+
+        &:checked {
+            background-color: $accent-light-blue;
+            border: .0625rem solid $accent-light-blue;
+            border-radius: .125rem;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: -0.0938rem;
+                left: .1563rem;
+                width: .25rem;
+                height: .5625rem;
+                border: solid $primary-text-color;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
