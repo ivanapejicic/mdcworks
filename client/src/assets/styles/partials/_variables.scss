@@ -18,7 +18,7 @@ $shadow: rgba(99, 99, 99, 0.7) 0rem .125rem .625rem 0rem;
 
 $primary-background-color: rgb(10, 11, 13);             /* Dark background */
 $sidebar-background-color: rgb(62, 62, 62);             /* Dark gray for sidebar */
-$card-background-color: rgb(28, 30, 34);                /* Background color for cards */
+$card-background-color: rgb(30, 30, 30);                /* Background color for cards */
 
 $border-color: rgb(41, 43, 47);                         /* Border color for elements */
 
@@ -32,3 +32,6 @@ $accent-green: rgb(52, 168, 83);                        /* Green for accents */
 $accent-light-blue: rgb(66, 133, 244);                  /* Blue for accents */
 
 $input-color: rgb(0, 115, 255);                         /* Blue for input fields */
+
+$hover-shadow: 0 0 1.25rem rgba(211, 211, 211, 0.45);
+$active-shadow: 0 0 1.25rem rgba(0, 115, 255, 0.8);

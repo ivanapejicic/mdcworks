@@ -11,12 +11,10 @@
 
     grid-template-rows: auto 1fr;
     grid-template-columns: 25% 1fr;
-    gap: 1rem;
+    gap: 2rem;
 
     &__categories {
         grid-area: categories;
-        border: .0625rem solid red;
-        color: red;
     }
 
     &__filters {
