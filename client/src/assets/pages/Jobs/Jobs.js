@@ -1,4 +1,5 @@
 import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
 import Hero from '../../components/Hero/Hero'
 import JobCategories from '../../components/JobCategories/JobCategories'
 import JobFilters from '../../components/JobFilters/JobFilters'
@@ -17,6 +18,7 @@ export default function Jobs() {
                 <JobResults className='job__results'/>
             </div>
         </main>
+        <Footer />
         </>
     )
 }
