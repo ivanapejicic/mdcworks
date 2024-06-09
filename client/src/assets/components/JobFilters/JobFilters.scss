@@ -34,14 +34,20 @@
         padding: 1rem 0;
         border-bottom: .0625rem solid $border-color;
 
+        &:last-of-type {
+            margin-bottom: 1rem;
+        }
+
         h3 {
             font-size: .875rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: .625rem;
         }
 
         label {
             font-size: .8125rem;
+            display: flex;
+            align-items: center;
         }
     }
 
@@ -70,10 +76,10 @@
         background-color: $link-button-color !important;
     }
 
-    &__type-container {
+    &__filter-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);  
     }
 
     &__type-filter {
@@ -81,7 +87,7 @@
         appearance: none;
         height: .8125rem;
         width: .8125rem;
-        border: .0625rem solid $border-color;
+        border: .0625rem solid $checkbox-border-color;
         border-radius: .125rem;
         position: relative;
         cursor: pointer;

@@ -20,7 +20,7 @@ $primary-background-color: rgb(10, 11, 13);             /* Dark background */
 $sidebar-background-color: rgb(30, 30, 30);             /* Dark gray for sidebar */
 $card-background-color: rgb(30, 30, 30);                /* Background color for cards */
 
-$border-color: rgb(213, 213, 213);                         /* Border color for elements */
+$border-color: rgb(139, 137, 137);                         /* Border color for elements */
 
 $primary-text-color: rgb(255, 255, 255);                /* White text */
 $secondary-text-color: rgb(102, 102, 102);              /* Lighter gray for text and icons */
@@ -33,6 +33,7 @@ $accent-light-blue: rgb(66, 133, 244);                  /* Blue for accents */
 
 $input-color: rgb(0, 115, 255);                         /* Blue for input fields */
 $slider-rail-color: rgb(85, 85, 85);
+$checkbox-border-color: rgb(213, 213, 213);  
 
 $hover-shadow: 0 0 1.25rem rgba(211, 211, 211, 0.45);
 $active-shadow: 0 0 1.25rem rgba(0, 115, 255, 0.8);

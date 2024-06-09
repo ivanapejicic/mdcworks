@@ -30,7 +30,7 @@ export default function JobFilters() {
             </div>
             <div className='filters__sub-section'>
                 <h3>Job Type</h3>
-                <div className='filters__type-container'>
+                <div className='filters__filter-container'>
                     {
                         jobType.map((type) => (
                             <label key={type.id}>
@@ -56,6 +56,19 @@ export default function JobFilters() {
                 <div className='filters__toggle-range'>
                     <span>Disabled:</span>
                     <Switch size="small" checked={disabled} onChange={onChange} />
+                </div>
+            </div>
+            <div className='filters__sub-section'>
+                <h3>Location</h3>
+                <div className='filters__filter-container'>
+                    {
+                        jobLocation.map((type) => (
+                            <label key={type.id}>
+                                <input className='filters__type-filter' type='checkbox' name='jobType' value={`${type.type}`} />
+                                {type.type}
+                            </label>
+                        ))
+                    }
                 </div>
             </div>
         </section>
