@@ -33,7 +33,7 @@ export default function JobResults({ jobPostings, loading }) {
                     ))
                 }
             </div>
-            <div className='pagination'>
+            <div className='results__pagination'>
                 <Pagination
                     current={currentPage}
                     pageSize={itemsPerPage}

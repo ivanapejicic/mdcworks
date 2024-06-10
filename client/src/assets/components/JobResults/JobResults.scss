@@ -18,4 +18,36 @@
         grid-template-rows: repeat(2, 1fr);
         gap: 2rem;
     }
+
+    &__pagination {
+        margin-top: 5rem;
+        display: grid;
+        place-items: center;
+
+        .ant-pagination-item-link {
+
+            svg {
+                fill: $primary-text-color;
+            }
+            
+        }
+
+        .ant-pagination-item {
+            border: .0625rem solid $border-color;
+            
+            a {
+                color: $primary-text-color;
+            }
+        }
+
+        .ant-pagination-item-active {
+            background-color: transparent;
+            border: .0625rem solid $link-button-color;
+            box-shadow: $link-shadow;
+
+            a {
+                color: $link-button-color;
+            }
+        }
+    }
 }
