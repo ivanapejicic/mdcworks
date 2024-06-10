@@ -1,0 +1,127 @@
+@use './../../styles/partials/variables' as *;
+@use './../../styles/partials/mixin' as *;
+@use './../../styles/partials/typography' as *;
+
+.card {
+    padding: 1rem;
+    border: .0625rem solid $border-color;
+    border-radius: .625rem;
+    font-size: .875rem;
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 1rem;
+
+        svg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            fill: $accent-light-blue;
+        }
+    }
+
+    &__logo-container {
+        height: 2.5rem;
+        width: 2.5rem;
+        border: .0313rem solid $border-color;
+        border-radius: .1875rem;
+        margin-right: 1rem;
+        background-color: white;
+        
+        img {
+            border-radius: .1875rem;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            object-position: center;
+            padding: .0625rem;
+        }
+    }
+
+    &__company-information {
+        display: flex;
+        flex-direction: column;
+
+        span {
+            &:first-of-type {
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__description-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 1rem 0;
+
+        span {
+            background-color: $link-button-color;
+            padding: .125rem 1.25rem;
+            border-radius: 1.5625rem;
+
+            &:first-of-type {
+                margin-right: 0.5rem;
+            }
+        }
+    }
+
+    &__position-information {
+        display: flex;
+        flex-direction: column;
+
+        span {
+            display: flex;
+            align-items: center;
+            margin-bottom: .625rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+            
+            svg {
+                transform: scale(1.2);
+                margin-right: 0.5rem;
+                height: 1rem;
+                width: 1rem;
+
+                &.dollar-sign {
+                    fill: $accent-green;
+                }
+
+                &.location-sign {
+                    fill: $accent-red;
+                }
+
+                &.star-sign {
+                    fill: $accent-yellow;
+                }
+            }
+        }
+    }
+
+    &__footer {
+        margin-top: 2.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        span {
+            font-size: .6875rem;
+        }
+
+        a {
+            padding: .3125rem .625rem;
+            color: $link-button-color;
+            font-weight: 600;
+            border: .0625rem solid $link-button-color;
+            border-radius: 1.5625rem;
+            box-shadow: $link-shadow;
+        }
+    }
+}

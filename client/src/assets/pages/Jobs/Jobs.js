@@ -11,13 +11,14 @@ import axios from 'axios';
 export default function Jobs() {
 
     const [jobPostings, setJobPostings] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         setLoading(true);
         const fetchPostings = async () => {
             try {
                 const results = await axios.get('http://localhost:8080/api/postings/active');
+                console.log(results.data);
                 setJobPostings(results.data)
                 setLoading(false);
             } catch (error) {

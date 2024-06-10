@@ -3,5 +3,19 @@
 @use '../../styles/partials/variables' as *;
 
 .results {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &__heading {
+        font-size: 1rem;
+        padding: .625rem 0;
+        margin-bottom: 1rem;
+    }
+
+    &__postings-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 2rem;
+    }
 }

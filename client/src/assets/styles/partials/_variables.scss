@@ -20,16 +20,17 @@ $primary-background-color: rgb(10, 11, 13);             /* Dark background */
 $sidebar-background-color: rgb(30, 30, 30);             /* Dark gray for sidebar */
 $card-background-color: rgb(30, 30, 30);                /* Background color for cards */
 
-$border-color: rgb(139, 137, 137);                         /* Border color for elements */
+$border-color: rgb(139, 137, 137);                      /* Border color for elements */
 
 $primary-text-color: rgb(255, 255, 255);                /* White text */
 $secondary-text-color: rgb(102, 102, 102);              /* Lighter gray for text and icons */
 
-$link-button-color: rgb(70, 139, 223);                   /* Blue for buttons and links */ 
+$link-button-color: rgb(70, 139, 223);                  /* Blue for buttons and links */ 
 
-$accent-red: rgb(234, 67, 53);                          /* Red for accents */
-$accent-green: rgb(52, 168, 83);                        /* Green for accents */
+$accent-red: rgb(177, 81, 57);                          /* Red for accents */
+$accent-green: rgb(114, 200, 122);                      /* Green for accents */
 $accent-light-blue: rgb(66, 133, 244);                  /* Blue for accents */
+$accent-yellow: rgb(202, 202, 75);                      /* Yellow for accents */
 
 $slider-rail-color: rgb(85, 85, 85);
 $checkbox-border-color: rgb(213, 213, 213);  
@@ -37,6 +38,7 @@ $checkbox-border-color: rgb(213, 213, 213);
 //box-shadow
 $hover-shadow: 0 0 1.25rem rgba(211, 211, 211, 0.45);
 $active-shadow: 0 0 1.25rem rgba(0, 115, 255, 0.8);
+$link-shadow: 0 0 .625rem rgba(0, 115, 255, 0.7);
 
 //spinners
 $spinner-background: rgba(90, 89, 89, 0.407);
