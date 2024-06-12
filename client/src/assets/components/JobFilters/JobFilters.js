@@ -8,8 +8,15 @@ import debounce from 'lodash.debounce';
 
 export default function JobFilters({ updateCheckboxFilters, updateSalaryRange, clearFilters, selectedFilters }) {
 
-    //holds state of range slider
+    //set slider default values
+    const defaultMinimum = 70000;
+    const defaultMaximum = 100000;
+
+    //holds state of range switch
     const [disabled, setDisabled] = useState(true);
+
+    //holds salary range slider values
+    const [rangeValues, setRangeValues] = useState([defaultMinimum, defaultMaximum]);
 
     //update state of range slider
     const onChange = (checked) => {
@@ -21,20 +28,13 @@ export default function JobFilters({ updateCheckboxFilters, updateSalaryRange, c
         setDisabled(true);
     }
 
-
     useEffect(() => {
         if (disabled) {
             updateSalaryRange([]);
         } else {
             updateSalaryRange(rangeValues);
         }
-    }, [disabled])
-
-    //set slider default values
-    const defaultMinimum = 70000;
-    const defaultMaximum = 100000;
-
-    const [rangeValues, setRangeValues] = useState([defaultMinimum, defaultMaximum]);
+    }, [disabled, rangeValues, updateSalaryRange])
 
     //update slider values with debounce
     const debouncedUpdateSalaryRange = useCallback(

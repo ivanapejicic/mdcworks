@@ -13,6 +13,14 @@ export default function Jobs() {
 
     const [jobPostings, setJobPostings] = useState([]);
     const [filteredPostings, setFilteredPostings] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState('');
+    const [selectedFilters, setSelectedFilters] = useState({
+        selectedCategory: '',
+        jobType: new Set(),
+        salaryRange: [],
+        jobLocation: new Set()
+    });
 
     //on load, fetch active job postings
     useEffect(() => {
@@ -31,17 +39,6 @@ export default function Jobs() {
 
         fetchPostings();
     }, [])
-
-    const [loading, setLoading] = useState(false);
-
-    const [selectedCategory, setSelectedCategory] = useState('');
-
-    const [selectedFilters, setSelectedFilters] = useState({
-        selectedCategory: '',
-        jobType: new Set(),
-        salaryRange: [],
-        jobLocation: new Set()
-    });
 
     //update postings when selecting filters
     useEffect(() => {
@@ -93,6 +90,7 @@ export default function Jobs() {
         }));
     }
 
+    //reset filters
     const clearFilters = () => {
         setSelectedFilters({
             selectedCategory: '',
