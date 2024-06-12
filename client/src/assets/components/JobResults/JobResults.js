@@ -4,7 +4,7 @@ import PostingCard from '../PostingCard/PostingCard';
 import { Pagination } from "antd";
 import { useState } from 'react';
 
-export default function JobResults({ jobPostings, loading }) {
+export default function JobResults({ jobPostings, loading, selectedCategory }) {
 
     //pagination
     const [currentPage, setCurrentPage] = useState(1);
@@ -25,7 +25,7 @@ export default function JobResults({ jobPostings, loading }) {
             {
                 loading && <CircleSpinner loading={loading} />
             }
-            <h2 className='results__heading'>All Postings</h2>
+            <h2 className='results__heading'>{`${(selectedCategory) ? `${selectedCategory} Job Postings` : 'All Postings'}`}</h2>
             <div className='results__postings-container'>
                 {
                     currentItems.map((posting, index) => (
