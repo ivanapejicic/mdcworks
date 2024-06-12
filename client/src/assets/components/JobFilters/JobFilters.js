@@ -1,32 +1,56 @@
 import './JobFilters.scss';
 
 import { jobType, jobLocation } from '../../data/data';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Slider, Switch } from 'antd';
 
-export default function JobFilters() {
+export default function JobFilters({ updateCheckboxFilters, updateSalaryRange, clearFilters, selectedFilters }) {
 
-    const [disabled, setDisabled] = useState(false);
+    //holds state of range slider
+    const [disabled, setDisabled] = useState(true);
 
+    //update state of range slider
     const onChange = (checked) => {
         setDisabled(checked);
     };
 
-    const createMarks = (min, max, step) => {
-        const marks = {};
-        for (let i = min; i <= max; i += step) {
-            marks[i] = '';
-        }
-        return marks;
-    };
+    //disable range switch on clear filters
+    const disableRangeSwitch = () => {
+        setDisabled(true);
+    }
 
-    const marks = createMarks(0, 10000, 500);
+
+    useEffect(() => {
+        if (disabled) {
+            updateSalaryRange([]);
+        } else {
+            updateSalaryRange(rangeValues);
+        }
+    }, [disabled])
+
+    //set slider default values
+    const defaultMinimum = 70000;
+    const defaultMaximum = 100000;
+
+    const [rangeValues, setRangeValues] = useState([defaultMinimum, defaultMaximum]);
+
+    //update slider values
+    const handleSliderChange = (values) => {
+        setRangeValues(values);
+        updateSalaryRange(values);
+    }
 
     return (
         <section className='job__filters filters'>
             <div className='filters__heading-container'>
                 <h2>Filters</h2>
-                <span>Clear All</span>
+                <span onClick={() => {
+                    clearFilters();
+                    disableRangeSwitch()
+                }}
+                >
+                    Clear All
+                </span>
             </div>
             <div className='filters__sub-section'>
                 <h3>Job Type</h3>
@@ -34,7 +58,14 @@ export default function JobFilters() {
                     {
                         jobType.map((type) => (
                             <label key={type.id}>
-                                <input className='filters__type-filter' type='checkbox' name='jobType' value={`${type.type}`} />
+                                <input
+                                    className='filters__type-filter'
+                                    type='checkbox'
+                                    name='jobType'
+                                    value={`${type.type}`}
+                                    onChange={() => updateCheckboxFilters('jobType', type.type)}
+                                    checked={selectedFilters.jobType.has(type.type) || false}
+                                />
                                 {type.type}
                             </label>
                         ))
@@ -42,16 +73,16 @@ export default function JobFilters() {
                 </div>
             </div>
             <div className='filters__sub-section'>
-                <h3>Range Salary</h3>
+                <h3>Salary Range</h3>
                 <Slider
                     range
-                    // tooltip={{open: true}}
-                    defaultValue={[3000, 6500]}
-                    min={0}
-                    max={10000}
+                    defaultValue={[defaultMinimum, defaultMaximum]}
+                    min={40000}
+                    max={300000}
                     step={500}
                     disabled={disabled}
-                    marks={marks}
+                    value={rangeValues}
+                    onChange={handleSliderChange}
                 />
                 <div className='filters__toggle-range'>
                     <span>Disabled:</span>
@@ -64,7 +95,14 @@ export default function JobFilters() {
                     {
                         jobLocation.map((type) => (
                             <label key={type.id}>
-                                <input className='filters__type-filter' type='checkbox' name='jobType' value={`${type.type}`} />
+                                <input
+                                    className='filters__type-filter'
+                                    type='checkbox'
+                                    name='jobType'
+                                    value={`${type.type}`}
+                                    onChange={() => updateCheckboxFilters('jobLocation', type.type)}
+                                    checked={selectedFilters.jobLocation.has(type.type) || false}
+                                />
                                 {type.type}
                             </label>
                         ))

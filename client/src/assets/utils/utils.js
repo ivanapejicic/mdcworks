@@ -41,3 +41,96 @@ export function timeAgo(postingDate) {
         return `${years} year${years > 1 ? 's' : ''} ago`;
     }
 }
+
+export function filterPostings(jobPostings, selectedFilters) {
+
+    const filteredData = jobPostings.filter(posting => {
+        let jobPosition, jobType, salaryRange, jobLocation = false;
+
+        if (!selectedFilters.selectedCategory) {
+            jobPosition = true
+        } else {
+            jobPosition = filterByJobCategory(posting, selectedFilters.selectedCategory);
+        }
+
+        if (selectedFilters.jobType.size === 0) {
+            jobType = true;
+        } else {
+            jobType = filterByJobType(posting, selectedFilters.jobType)
+        }
+
+        if (!posting.positionSalary) {
+            salaryRange = true;
+        } else {
+            if (selectedFilters.salaryRange.length === 0) {
+                salaryRange = true;
+            } else {
+                salaryRange = filterBySalaryRange(posting, selectedFilters.salaryRange);
+            }
+        }
+
+        if (selectedFilters.jobLocation.size === 0) {
+            jobLocation = true;
+        } else {
+            jobLocation = filterByJobLocation(posting, selectedFilters.jobLocation);
+        }
+
+        return jobPosition && jobType && salaryRange && jobLocation;
+    })
+
+    return filteredData;
+}
+
+export function countPostingsByCategory(jobPostings, category) {
+    const countPostings = jobPostings.reduce((count, job) => {
+        if (job.jobCategory === category) {
+            return count + 1;
+        }
+        return count;
+    }, 0);
+
+    let formattedCount;
+
+    if (countPostings === 1) {
+        return '1 Opening'
+    } else {
+        return `${countPostings} Openings`
+    }
+}
+
+function filterByJobCategory(jobPosting, category) {
+    return jobPosting.jobCategory === category;
+}
+
+function filterByJobType(jobPosting, jobTypeFilters) {
+    let type = false;
+
+    for (const filter of jobTypeFilters) {
+        if (filter === jobPosting.jobType) {
+            type = true;
+            break;
+        }
+    }
+
+    return type;
+}
+
+function filterBySalaryRange(jobPosting, salaryRange) {
+    const minValue = salaryRange[0];
+    const maxValue = salaryRange[1];
+
+    return (jobPosting.positionSalary > minValue) && (jobPosting.positionSalary < maxValue);
+}
+
+function filterByJobLocation(jobPosting, jobLocationFilters) {
+    let location = false;
+
+    for (const filter of jobLocationFilters) {
+        if (filter === jobPosting.jobLocationType) {
+            location = true;
+            break;
+        }
+    }
+
+    return location;
+}
