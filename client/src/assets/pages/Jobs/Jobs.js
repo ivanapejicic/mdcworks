@@ -6,7 +6,7 @@ import JobCategories from '../../components/JobCategories/JobCategories'
 import JobFilters from '../../components/JobFilters/JobFilters'
 import JobResults from '../../components/JobResults/JobResults'
 import { filterPostings } from '../../utils/utils'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import axios from 'axios';
 
 export default function Jobs() {
@@ -56,7 +56,7 @@ export default function Jobs() {
         }
         
         setLoading(false)
-    }, [selectedFilters])
+    }, [selectedFilters, jobPostings])
 
     //update job type and location filters
     const updateCheckboxFilters = (category, filter) => {
@@ -83,12 +83,12 @@ export default function Jobs() {
     }
 
     //update salary range
-    const updateSalaryRange = (range) => {
+    const updateSalaryRange = useCallback((range) => {
         setSelectedFilters((prevFilters) => ({
             ...prevFilters,
             salaryRange: range
         }));
-    }
+    }, [])
 
     //reset filters
     const clearFilters = () => {
@@ -118,6 +118,7 @@ export default function Jobs() {
                         updateCheckboxFilters={updateCheckboxFilters}
                         updateSalaryRange={updateSalaryRange}
                         selectedFilters={selectedFilters}
+                        setSelectedFilters={setSelectedFilters}
                         clearFilters={clearFilters}
                     />
                     <JobResults
