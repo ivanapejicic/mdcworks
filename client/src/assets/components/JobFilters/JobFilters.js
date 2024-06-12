@@ -1,8 +1,10 @@
 import './JobFilters.scss';
 
 import { jobType, jobLocation } from '../../data/data';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Slider, Switch } from 'antd';
+
+import debounce from 'lodash.debounce';
 
 export default function JobFilters({ updateCheckboxFilters, updateSalaryRange, clearFilters, selectedFilters }) {
 
@@ -34,10 +36,18 @@ export default function JobFilters({ updateCheckboxFilters, updateSalaryRange, c
 
     const [rangeValues, setRangeValues] = useState([defaultMinimum, defaultMaximum]);
 
+    //update slider values with debounce
+    const debouncedUpdateSalaryRange = useCallback(
+        debounce((values) => {
+            updateSalaryRange(values);
+        }, 600),
+        []
+    );
+
     //update slider values
     const handleSliderChange = (values) => {
         setRangeValues(values);
-        updateSalaryRange(values);
+        debouncedUpdateSalaryRange(values);
     }
 
     return (

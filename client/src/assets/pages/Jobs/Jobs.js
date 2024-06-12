@@ -113,7 +113,7 @@ export default function Jobs() {
                         className='job__categories'
                         selectedCategory={selectedCategory}
                         updateCategory={updateCategory}
-                        jobPostings={filteredPostings}
+                        jobPostings={jobPostings}
                     />
                     <JobFilters
                         className='job__filters'
