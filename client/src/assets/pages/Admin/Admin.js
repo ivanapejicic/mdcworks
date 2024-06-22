@@ -1,5 +1,5 @@
 import './Admin.scss';
-import Header from '../../components/Header/Header';
+import HeaderAdmin from '../../components/HeaderAdmin/HeaderAdmin';
 import { IoBagRemoveOutline } from "react-icons/io5";
 import { GrGroup } from "react-icons/gr";
 import { CiCirclePlus } from "react-icons/ci";
@@ -8,7 +8,7 @@ import { CiEdit } from "react-icons/ci";
 function Admin() {
     return (
         <div className='admin-main'>
-            <Header />
+            <HeaderAdmin />
             <div className='admin'>
                 <p className='admin__text'>Signed in as Admin</p>
                 <h3 className='admin__welcome'>WELCOME CHRISTIAN ORTEGA</h3>

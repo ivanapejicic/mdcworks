@@ -1,0 +1,65 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/variables' as *;
+
+.header {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.25rem;
+    font-size: .9375rem;
+    margin-right: 1rem;
+
+    &__image-container {
+        height: 10vh;
+        width: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__image {
+        height: 70%;
+    }
+
+    &__nav {
+        .active {
+            color: $link-button-color;
+            font-weight: 600;
+        }
+    }
+
+    &__nav-item {
+        margin-right: .75rem;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+    }
+
+    &__buttons-container {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        button {
+            color: $primary-text-color;
+            padding: .3125rem 0rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__mail,
+    &__notifications {
+        background-color: $primary-background-color;
+    }
+
+    &__profile {
+        width: 1.75rem;
+        height: 1.75rem;
+        border-radius: 50%;
+    }
+}
