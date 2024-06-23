@@ -2,119 +2,80 @@
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/variables' as *;
 
-.admin-main{
-    font-family: 'Inter';
-}
-.admin {
-    margin: 2rem;
-
-    @include desktop{
+.admin{
+    &__body{
         margin: 4rem 8rem;
-    }
+    }  
+}
+
+.company{
+    margin-top: 3rem;
 
     &__text{
-        color: $text;
-        font-size: .8125rem;
+        color: $link-button-color;
+    }
 
-        @include desktop{
-            font-size: 1rem;
+    &__form{
+        &-top{
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            
         }
-    }
-    &__welcome{
-        color: $mdcblue;
-        font-size: .8rem;
-        padding: .5rem 0;
+        .field{
+            display: flex;
+            flex-direction: column;
+            margin: 1rem 0;
+            &__label{
+                display: block;
+            }
+            
+            &__input{
+                padding: .5rem .75rem;
+                margin-top: .2rem;
+                display: block;
+                margin-right: 12rem;
+                border-radius: .3125rem;
+                border: .75px $border solid;
+                background-color: #2A2F3B;
+                color: $primary-text-color;
+                width: 24.875rem;
 
-        @include desktop{
-            font-size: 1.3rem;
-        }
-    }
-}
+                &::placeholder{
+                    color: $primary-text-color;
+                    font-size: .875rem;
+                }
 
-.stats{
-    width: 80%;
-    padding-left: 2rem;
-    display: flex;
+            }
+            &__upload{
+                background-color: #2A2F3B;
+                margin: .3rem 0;
+                width: 24.875rem;
+                border-radius: .3125rem;
+                border: .75px $border solid;
+                height: 15.1875rem;
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
 
-    @include tablet{
-        width: 60%;
-    }
-    @include desktop{
-        margin: 2rem 6rem;
-    }
+                .text{
+                    font-size: .75rem;
+                    margin-top: .2rem;
+                }
 
-    &__jobs{
-        background-color: $jobs;
-        padding: 2rem;
-        width: 50%;
-        display:flex;
-        justify-content: space-between;
-        align-items:center;
-        margin-right: .75rem;
-        border-radius: .75rem;
-
-        &-right{
-            background-color: white;
-            padding: .3rem;
-        }
-
-        &-left{
-            &__text{
-                color: $text;
+            }
+            &__button{
+                background-color: $link-button-color;
+                color: white;
+                font-weight: 600;
+                border-radius: .3125rem;
+                width: 9.0625rem;
+                height: 2.625rem;
+                padding: .3rem;
+                margin: .75rem 7.5rem;
             }
         }
-    }
-    &__students{
-        background-color: $students;
-        padding: 2rem;
-        width: 50%;
-        display:flex;
-        justify-content: space-between;
-        align-items:center;
-        border-radius: .75rem;
-
-
-        &-right{
-            background-color: white;
-            padding: .3rem;
-        }
-        &-left{
-            &__text{
-                color: $text;
-                margin-top: .3rem;
-            }
-        }
-        
-    }
-}
-
-.options{
-    width: 80%;
-    padding-left: 2rem;
-    margin-top: 2rem;
-    display: flex;
-
-    @include tablet{
-        width: 60%;
-    }
-    @include desktop{
-        margin: 2rem 6rem;
-    }
-
-    &__add, &__edit{
-        color: $mdcblue;
-        display: flex;
-        padding: 3rem;
-        width:50%;
-        border: solid 1px $border;
-        border-radius: .75rem;
-        text-wrap: nowrap;
-
-        &-text{
-            margin-left: .75rem;
-        }
-    }
-    &__add{
-        margin-right: .75rem;
     }
 }
