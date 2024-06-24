@@ -106,14 +106,6 @@ function Admin() {
                                 <div className='field'>
                                     <label className='field__label' htmlFor="description">Job Description / Skills</label>
                                     <textarea className='field__upload' type='text' id='description' name='description' placeholder={'Key Responsabilities\n-Engage with customers to understand their needs and provide tailored product recommendations.\n-Demonstrate Apple products and services, highlighting their features and benefits.\n-Assist in managing inventory and maintaining the visual presentation of products.\n-Participate in sales training sessions to develop and refine your sales techniques.\n-Gather customer feedback to improve sales strategies and product offerings.'}>
-                                        {/* <p className='text'>Key Responsabilities</p>
-                                        <ul className='field__upload-placeholder text'>
-                                            <li className='text'>Engage with customers to understand their needs and provide tailored product recommendations.</li>
-                                            <li className='text'>Demonstrate Apple products and services, highlighting their features and benefits.</li>
-                                            <li className='text'>Assist in managing inventory and maintaining the visual presentation of products.</li>
-                                            <li className='text'>Participate in sales training sessions to develop and refine your sales techniques.</li>
-                                            <li className='text'>Gather customer feedback to improve sales strategies and product offerings.</li>
-                                        </ul> */}
                                     </textarea>
                                 </div>
                             </div>
