@@ -2,80 +2,101 @@
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/variables' as *;
 
-.admin{
-    &__body{
-        margin: 4rem 8rem;
-    }  
+.admin {
+    &__body {
+        margin: 3rem 8rem;
+    }
 }
 
-.company{
-    margin-top: 3rem;
+.company,
+.job-details {
+    margin-top: 2rem;
 
-    &__text{
+    &__text {
         color: $link-button-color;
+        font-size: .75rem;
     }
 
-    &__form{
-        &-top{
+    &__form {
+        &-top {
             display: flex;
             align-items: baseline;
             justify-content: space-between;
-            
+
         }
-        .field{
+
+        .field {
             display: flex;
             flex-direction: column;
             margin: 1rem 0;
-            &__label{
+
+            &__label {
                 display: block;
+                font-size: .8rem;
             }
-            
-            &__input{
+
+            &__input {
                 padding: .5rem .75rem;
-                margin-top: .2rem;
+                margin-top: .3rem;
                 display: block;
                 margin-right: 12rem;
                 border-radius: .3125rem;
-                border: .75px $border solid;
-                background-color: #2A2F3B;
+                border: .0469rem $border solid;
+                background-color: $input-field-background;
                 color: $primary-text-color;
                 width: 24.875rem;
+                font-size: .75rem;
 
-                &::placeholder{
+                &::placeholder {
                     color: $primary-text-color;
-                    font-size: .875rem;
+                    font-size: .75rem;
                 }
 
             }
-            &__upload{
-                background-color: #2A2F3B;
+
+            &__input--url {
+                &::placeholder {
+                    color: $text;
+                    font-size: .6rem;
+                }
+            }
+
+            &__upload {
+                background-color: $input-field-background;
                 margin: .3rem 0;
                 width: 24.875rem;
                 border-radius: .3125rem;
                 border: .75px $border solid;
-                height: 15.1875rem;
-                padding: 2rem;
+                height: 10rem;
+                padding-bottom: 1rem;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+                color: $primary-text-color;
+                padding: .5rem .75rem;
 
-                .text{
+                &::placeholder {
+                    color: $primary-text-color;
                     font-size: .75rem;
-                    margin-top: .2rem;
                 }
 
-            }
-            &__button{
-                background-color: $link-button-color;
-                color: white;
-                font-weight: 600;
-                border-radius: .3125rem;
-                width: 9.0625rem;
-                height: 2.625rem;
-                padding: .3rem;
-                margin: .75rem 7.5rem;
+                .text {
+                    font-size: .75rem;
+                    margin-bottom: .2rem;
+                }
             }
         }
     }
+}
+
+.button {
+    background-color: $link-button-color;
+    color: white;
+    font-weight: 600;
+    font-size: .75rem;
+    border-radius: .3125rem;
+    width: 9.0625rem;
+    margin: .75rem 7.5rem;
+    padding: .5rem;
 }
