@@ -1,16 +1,43 @@
+import React, { useRef, useState } from 'react';
 import './Admin.scss';
 import HeaderAdmin from '../../components/HeaderAdmin/HeaderAdmin';
 import { TiUpload } from "react-icons/ti";
 
 function Admin() {
+    const [fileName, setFileName] = useState(null);
+    const fileInputRef = useRef(null);
+
+    const handleIconClick = () => {
+        fileInputRef.current.click();
+    };
+
+    const handleDrop = (e) => {
+        e.preventDefault();
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            setFileName(files[0].name);
+        }
+    };
+
+    const handleDragOver = (e) => {
+        e.preventDefault();
+    };
+
+    const handleChange = (e) => {
+        const files = e.target.files;
+        if (files.length > 0) {
+            setFileName(files[0].name);
+        }
+    };
+
     return (
         <div className='admin'>
             <HeaderAdmin />
             <div className='admin__body'>
-                <h2 className='admin__body-title'>Add New Job</h2>
+                <h4 className='admin__body-title'>Add New Job</h4>
 
                 <div className='company'>
-                    <h4 className='company__title'>Company Details</h4>
+                    <h5 className='company__title'>Company Details</h5>
                     <p className='company__text'>Please share additional details about company.</p>
                     <div className='company__form'>
                         <div className='company__form-top'>
@@ -29,13 +56,30 @@ function Admin() {
                                     <label className='field__label' htmlFor="companylogo">Company Logo</label>
                                     <div
                                         className='field__upload'
-                                        ondrop="dropHandler(event);"
-                                        ondragover="dragOverHandler(event);">
-                                        <TiUpload style={{ width: '1.5rem', height: '4rem' }} />
+                                        onDrop={handleDrop}
+                                        onDragOver={handleDragOver}
+                                    >
+                                        <TiUpload 
+                                            style={{ width: '1.5rem', height: '4rem'}}
+                                        />
+                                        <input
+                                            type="file"
+                                            ref={fileInputRef}
+                                            style={{ display: 'none' }}
+                                            id="companylogo"
+                                            name="companylogo"
+                                            accept="image/png, image/jpeg, image/jpg"
+                                            onChange={handleChange}
+                                        />
                                         <p className='text'><b>Drop your files here</b></p>
                                         <p className='text'>or click to choose from your device</p>
                                     </div>
-                                    <button className='button'>Upload file</button>
+                                    <button className='button' onClick={handleIconClick} style={{cursor: 'pointer' }}>Upload file</button>
+                                    {fileName && (
+                                        <div className='file-name'>
+                                            <p>Uploaded file: {fileName}</p>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
