@@ -1,0 +1,36 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/variables' as *;
+
+.categories {
+    
+    &__card {
+        display: flex;
+        justify-content: space-between;
+        padding: .625rem .9375rem;
+        border-radius: .3125rem;
+        font-size: .8125rem;
+        background-color: $card-background-color;
+        margin-bottom: .75rem;
+        transition: box-shadow 0.3s ease;
+
+        &:hover {
+            box-shadow: $hover-shadow;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__heading {
+        font-size: 1rem !important;
+        margin-bottom: .75rem !important;
+        box-shadow: none !important;
+    }
+
+    .active {
+        box-shadow: $active-shadow;
+    }
+}
+

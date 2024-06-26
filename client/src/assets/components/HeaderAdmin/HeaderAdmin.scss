@@ -9,6 +9,7 @@
     align-items: center;
     padding: 0 1.25rem;
     font-size: .9375rem;
+    margin-right: 1rem;
 
     &__image-container {
         height: 10vh;
@@ -30,7 +31,7 @@
     }
 
     &__nav-item {
-        margin-right: .9375rem;
+        margin-right: .75rem;
 
         &:last-of-type {
             margin-right: 0;
@@ -39,20 +40,26 @@
     }
 
     &__buttons-container {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
         button {
-            font-weight: 500;
             color: $primary-text-color;
-            padding: .3125rem 1.25rem;
-            border-radius: .25rem;
+            padding: .3125rem 0rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 
-    &__login {
+    &__mail,
+    &__notifications {
         background-color: $primary-background-color;
-        
     }
 
-    &__signup {
-        background-color: $link-button-color;
+    &__profile {
+        width: 1.75rem;
+        height: 1.75rem;
+        border-radius: 50%;
     }
 }

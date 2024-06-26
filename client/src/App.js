@@ -3,28 +3,23 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './assets/pages/Login/Login';
 import Home from './assets/pages/Home/Home';
 import Admin from './assets/pages/Admin/Admin';
-import AI from './assets/pages/AI/AI';
-import CyberSecurity from './assets/pages/CyberSecurity/CyberSecurity';
-import DataAnalyst from './assets/pages/DataAnalyst/DataAnalyst';
-import InformationSystems from './assets/pages/InformationSystems/InformationSystems';
-import SoftwareEngineer from './assets/pages/SoftwareEngineer/SoftwareEngineer';
-import NewJob from './assets/pages/NewJob/NewJob';
+import Jobs from './assets/pages/Jobs/Jobs';
+import Company from './assets/pages/Company/Company';
+import About from './assets/pages/About/About';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path= '/' element={<Login />} />
-          <Route path= '/home' element={<Home />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
           <Route path='/admin' element={<Admin />} />
-          <Route path='/addjob' element={<NewJob />} />
-          <Route path= '/ai' element={<AI />} />
-          <Route path= '/cybersecurity' element={<CyberSecurity />} />
-          <Route path='/dataanalyst' element={<DataAnalyst />} />
-          <Route path= '/informationsystems' element={<InformationSystems />} />
-          <Route path= '/softwareengineer' element={<SoftwareEngineer />} />
-        </Routes>      
+          <Route path='/jobs' element={<Jobs />} />
+          <Route path='/talent' element={<Admin />} />
+          <Route path='/company' element={<Company />} />
+          <Route path='/about' element={<About />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );

@@ -1,0 +1,53 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/variables' as *;
+
+.results {
+    display: flex;
+    flex-direction: column;
+
+    &__heading {
+        font-size: 1rem;
+        padding: .625rem 0;
+        margin-bottom: 1rem;
+    }
+
+    &__postings-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    &__pagination {
+        margin-top: 5rem;
+        display: grid;
+        place-items: center;
+
+        .ant-pagination-item-link {
+
+            svg {
+                fill: $primary-text-color;
+            }
+            
+        }
+
+        .ant-pagination-item {
+            border: .0625rem solid $border-color;
+            
+            a {
+                color: $primary-text-color;
+            }
+        }
+
+        .ant-pagination-item-active {
+            background-color: transparent;
+            border: .0625rem solid $link-button-color;
+            box-shadow: $link-shadow;
+
+            a {
+                color: $link-button-color;
+            }
+        }
+    }
+}

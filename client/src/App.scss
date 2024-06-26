@@ -2,16 +2,53 @@
 @use '../src/assets/styles/partials/mixin' as *;
 @use '../src/assets/styles/partials/variables' as *;
 
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  text-decoration: none;
+}
+
+body {
+  height: 100%;
   font-family: 'Inter';
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  color: $primary-text-color;
+  background-color: $primary-background-color;
+}
+
+
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  outline: none;
 }

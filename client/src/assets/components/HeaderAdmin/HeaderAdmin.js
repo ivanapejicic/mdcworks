@@ -1,9 +1,11 @@
-import './Header.scss';
+import './HeaderAdmin.scss';
 import logo from './../../images/shark-tank.webp';
 import { navOptions } from '../../data/data';
 import { NavLink } from 'react-router-dom';
-
-function Header() {
+import { CiMail } from "react-icons/ci";
+import { IoNotificationsOutline } from "react-icons/io5";
+import admin from './../../images/admin.jpeg';
+function HeaderAdmin() {
 
     return (
         <header className='header'>
@@ -24,15 +26,17 @@ function Header() {
                 </ul>
             </nav>
             <div className='header__buttons-container'>
-                <button className='header__login'>
-                    <a href='/login'>Log In</a>
+                <button className='header__mail'>
+                    <CiMail style={{ width: '1.5rem', height: '1.5rem' }}/>
                 </button>
-                <button className='header__signup'>
-                    <a href='https://www.mdc.edu/registration/'>Sign Up</a>
-                </button>
+                <button className='header__notifications'>
+                    <IoNotificationsOutline style={{ width: '1.5rem', height: '1.5rem' }}/>
+                </button>                    
+                <img className='header__profile' src={admin} alt='Admin Profile' />
+
             </div>
         </header>
     )
 }
 
-export default Header;
+export default HeaderAdmin;
